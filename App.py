@@ -53,14 +53,14 @@ app = Flask(__name__)
 app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_host=1, x_proto=1)
 
 # get channel_secret and channel_access_token from your environment variable
-channel_secret = os.getenv('LINE_CHANNEL_SECRET', None)
-channel_access_token = os.getenv('LINE_CHANNEL_ACCESS_TOKEN', None)
-if channel_secret is None or channel_access_token is None:
-    print('Specify LINE_CHANNEL_SECRET and LINE_CHANNEL_ACCESS_TOKEN as environment variables.')
-    sys.exit(1)
+#channel_secret = os.getenv('LINE_CHANNEL_SECRET', None)
+#channel_access_token = os.getenv('LINE_CHANNEL_ACCESS_TOKEN', None)
+#if channel_secret is None or channel_access_token is None:
+#    print('Specify LINE_CHANNEL_SECRET and LINE_CHANNEL_ACCESS_TOKEN as environment variables.')
+#    sys.exit(1)
 
-line_bot_api = LineBotApi(channel_access_token)
-handler = WebhookHandler(channel_secret)
+line_bot_api = LineBotApi('437DIBz8xi6t0wG9EvOf3SbgTm71wJeCfhdfxTAWXM6ZqIT9/cGOxaniWQhRLjoIpUWC0k7HSmNgSGLQf+GCG3WdtaCf2YbqcSW0foQWxRitcZVsyOMkcs2v4tHurfXpFgfRjHt9sqY9Rr04dOUUXAdB04t89/1O/w1cDnyilFU='​)
+handler = WebhookHandler('170b027b829a7d47c0b370a91f5cfbf4')​
 
 static_tmp_path = os.path.join(os.path.dirname(__file__), 'static', 'tmp')
 ...
